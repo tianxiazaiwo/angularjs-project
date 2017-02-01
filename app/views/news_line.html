@@ -1,0 +1,15 @@
+<section class="page" id="news" ng-controller="newsLineCtrl">
+	<img src="images/news.png" />
+    <h2>请上传旅游投诉以及突发事件线索</h2>
+    <section class="file">
+    	<label>
+        	<input type="file" class="video" video ng-click="isTxt=false"/>
+            <span>导入视频</span>
+       </label>
+        <label>
+        	<input type="file" class="img" img/>
+            <span>上传照片</span>
+        </label>
+    </section>
+    <p class="info" ng-class="{true:'animated',false:''}[isTxt]">{{alertTxt}}</p>
+</section>

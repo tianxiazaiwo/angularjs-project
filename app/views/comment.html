@@ -1,0 +1,50 @@
+<section class="page" id="form" ng-controller="commentCtrl">
+	<form name="commForm" ng-submit="commSubmit()" novalidate>
+	<section class="tags" id="formTag">
+        <h2>给视频添加标签</h2>
+        <label>
+            <input type="radio" name="tags2" value="服务好" ng-click="checkTag()"/>
+            <span>服务好</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="景色赞"  ng-click="checkTag()"/>
+            <span>景色赞</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="千篇一律"  ng-click="checkTag()"/>
+            <span>千篇一律</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="看人海"  ng-click="checkTag()"/>
+            <span>看人海</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="挤爆了"  ng-click="checkTag()"/>
+            <span>挤爆了</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="服务好"  ng-click="checkTag()"/>
+            <span>服务好</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="景色赞"  ng-click="checkTag()"/>
+            <span>景色赞</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="千篇一律"  ng-click="checkTag()"/>
+            <span>千篇一律</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="看人海"  ng-click="checkTag()"/>
+            <span>看人海</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="挤爆了"  ng-click="checkTag()"/>
+            <span>挤爆了</span>
+        </label>
+    </section>
+    <textarea class="formText" placeholder="（选填：说点什么呢~~）" rows="5"></textarea>
+    <input type="tel" class="formText" placeholder="（选填：说点什么呢~~）"/>
+    <button class="btn" ng-class="{true:'submit',false:''}[isComm]">上传</button>
+    </form>
+</section>

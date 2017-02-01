@@ -1,0 +1,100 @@
+
+<section class="page" id="index" ng-controller="gradeCtrl">
+	<section class="scrollWrap">
+        <section id="tabPic" class="slideBox" tabs>
+            <ul id="picList">
+                <li ng-repeat="img in imgs"><img ng-src="images/{{$index+1}}.jpg" /></li>
+            </ul>
+            <section class="picMask">
+                <p>成都九寨沟景区</p>
+                <nav id="btns">
+                    <a href="javascript:;" class="active" data-i="0"></a>
+                    <a href="javascript:;" data-i="1"></a>
+                    <a href="javascript:;" data-i="2"></a>
+                    <a href="javascript:;" data-i="3"></a>
+                    <a href="javascript:;" data-i="4"></a>
+                </nav>
+            </section>
+        </section> 
+        <!--<a href="javascript:;" class="newsBtn">
+        	<em>新闻线索</em>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>-->
+        <a href="#/news_line" class="newsBtn">新闻线索</a>
+        <form  name="gradeForm" ng-submit="gradeSubmit()" novalidate>
+        <section id="score">
+            <h2>给景区评分</h2>
+            <ul class="scoreList">
+                <li>
+                    <span>综合印象</span>
+                    <nav>
+                        <a href="javascript:;" ng-class="{true:'active',false:''}[isSelected]" ng-repeat="star in stars" data-i={{$index}}   star></a> 
+                    </nav>
+                    <input type="hidden" value="0" class="input1"/>
+                </li>
+                <li>
+                    <span>服务指数</span>
+                    <nav>
+                          <a href="javascript:;" ng-class="{true:'active',false:''}[isSelected]" ng-repeat="star in stars" data-i={{$index}} star></a> 
+                    </nav>
+                    <input type="hidden" value="0" class="input2"/>
+                </li>
+                <li>
+                    <span>消费指数</span>
+                    <nav>
+                          <a href="javascript:;"  ng-class="{true:'active',false:''}[isSelected]" ng-repeat="star in stars" data-i={{$index}}
+star></a> 
+                    </nav>
+                    <input type="hidden" value="0" class="input3"/>
+                </li>
+            </ul>
+        </section>
+        <section class="tags" id="indexTag">
+            <h2>给景区添加标签</h2>
+            <label>
+                <input type="radio" name="tags" value="服务好" ng-click="addTag()"/>
+                <span>服务好</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="景色赞"  ng-click="addTag()"/>
+                <span>景色赞</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="千篇一律"  ng-click="addTag()"/>
+                <span>千篇一律</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="看人海"  ng-click="addTag()"/>
+                <span>看人海</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="挤爆了"  ng-click="addTag()"/>
+                <span>挤爆了</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="服务好"  ng-click="addTag()"/>
+                <span>服务好</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="景色赞"  ng-click="addTag()"/>
+                <span>景色赞</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="千篇一律"  ng-click="addTag()"/>
+                <span>千篇一律</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="看人海"  ng-click="addTag()"/>
+                <span>看人海</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="挤爆了"  ng-click="addTag()"/>
+                <span>挤爆了</span>
+            </label>
+        </section>
+        <p class="info" ng-bind="txt" ng-class="{true:'animated',false:''}[isText]"></p>
+        <button class="btn" ng-class="{true:'submit',false:''}[isSubmit]">提交 </button>
+        </form>
+    </section>

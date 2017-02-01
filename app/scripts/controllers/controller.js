@@ -1,0 +1,85 @@
+var myModule=angular.module("myCtrl",[]);
+//欢迎页面控制器
+myModule.controller("welcomeCtrl",["$scope","$location","$timeout",function($scope,$location,$timeout){
+	$scope.jump=function(){
+		var timer=null;
+		timer=$timeout(function(){
+			$timeout.cancel(timer);
+			$location.path("/grade");
+		},5000)
+	}
+	$scope.jump();
+}]);
+
+//评分页面控制器
+myModule.controller("gradeCtrl",["$scope","$location",function($scope,$location){
+	$scope.imgs=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];
+	//$scope.slideBox();
+	$scope.stars=['1','2','3','4','5'];
+	$scope.isScore=true;
+	$scope.isTag=false;
+	$scope.isSubmit=false;
+	$scope.txt="";
+	$scope.isText=false;
+	$scope.score=function(){
+		$scope.isScore=true;
+		if($scope.isTag && $scope.isScore){
+			$scope.addSubmit=true;
+		}
+	}
+	$scope.addTag=function(){
+		$scope.isTag=true;
+		if($scope.isTag && $scope.isScore){
+			$scope.isSubmit=true;
+		}
+	}
+	$scope.gradeSubmit=function(){
+		if($scope.isScore){
+			if($scope.isTag){
+				$location.path("/grade_out");
+			}else{
+				$scope.txt="请给景区添加标签";
+				$scope.isText=true;
+			}
+		}else{
+			$scope.txt="请给景区评分";
+			$scope.isText=true;
+		}
+		
+	}
+}]);
+//评分跳出页面控制器
+myModule.controller("gradeOutCtrl",["$scope","$location","$timeout",function($scope,$location,$timeout){ 
+	$scope.fadeOut=function(){
+		var timer=null;
+		timer=$timeout(function(){
+			$location.path("/news_line");
+		},800)
+	}
+	$scope.fadeOut();
+}]);
+//新闻线索控制器
+//myModule.controller("newsLineCtrl",["$scope",function($scope){
+//	
+//}]);
+//评论页面控制器
+myModule.controller("commentCtrl",["$scope","$location",function($scope,$location){
+	$scope.isComm=false;
+	$scope.checkTag=function(){
+		$scope.isComm=true;
+	}
+	$scope.commSubmit=function(){
+		if($scope.isComm){
+			$location.path("/load_success");
+			$scope.isComm=false;
+		}else{
+			alert("请先给视频添加标签");
+		}		
+	}
+}]);
+//上传成功页面控制器
+myModule.controller("loadSuccessCtrl",["$scope","$location",function($scope,$location){
+	$scope.reSubmit=function(){
+		$location.path("/grade");
+	}
+}])

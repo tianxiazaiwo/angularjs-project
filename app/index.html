@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<title>五一E起游</title>
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<link href="style/app.css" rel="stylesheet" />
+<script src="vendor/angular.js"></script>
+<script src="vendor/angular-route.js"></script>
+<script src="scripts/controllers/controller.js"></script> 
+<script src="scripts/directives/directive.js"></script> 
+<script src="scripts/tplConfig.js"></script> 
+<script src="scripts/app.js"></script>
+<script src="scripts/common.js"></script>
+<!--<script src="vendor/require.js" data-main="scripts/main"></script>-->
+</head>
+<body>
+<script>
+document.body.style.height=view().h+"px";
+</script>
+<div class="view" ng-view></div>
+</body>
+</html>

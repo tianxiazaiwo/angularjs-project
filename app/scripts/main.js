@@ -1,0 +1,47 @@
+require.config({
+	paths:{
+		angular:"../vendor/angular",
+		angularRoute:"../vendor/angular-route",
+		zepto:"../vendor/zepto.min",
+		//controller:"controllers/controller",
+		//directive:"directives/directive"
+	},
+	shim:{
+		angular:{
+			deps:["zepto"],
+			exports:"angular"
+		}
+		angularRoute:{
+			deps:["angular"]
+		}
+	}
+});
+require([
+	"app", 
+	"controllers/controller",
+	"directives/directive"
+],function(angular,app){
+	app.config(["$routeProvider",function($routeProvider){
+		$routeProvider.when("/welcome",{
+		templateUrl:"../views/welcome.html",
+		controller:"welcomeCtrl"
+		}).when("/grade",{
+			templateUrl:"../views/grade.html",
+			controller:"gradeCtrl"
+		}).when("/grade_out",{
+			templateUrl:"../views/grade_out.html",
+			controller:"gradeOutCtrl" 
+		}).when("/news_line",{
+			templateUrl:"../views/news_line.html",
+			controller:"newsLineCtrl"
+		}).when("/comment",{
+			templateUrl:"../views/comment.html",
+			controller:"commentCtrl"
+		}).when("/load_success",{
+			templateUrl:"../views/load_success.html",
+			controller:"loadSuccessCtrl"
+		}).otherwise({
+			redirectTo:"/welcome"
+		})
+	}])
+});
